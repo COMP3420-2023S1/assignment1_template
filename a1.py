@@ -7,7 +7,7 @@ def image_statistics(image):
      """Return a dictionary with the following statistics about the image. Assume that 
      the image is a colour image with three channels.
      - resolution: a tuple of the form (number_rows, number_columns).
-     - centroid: a tuple of tree elements, one per channel, where each element 
+     - centroid: a tuple of three elements, one per channel, where each element 
           shows the average of the channel values of the corresponding pixel.
      - max_values: a tuple of three elements, one per channel, where each element
           shows the maximum value in each channel.
@@ -38,7 +38,7 @@ def brightness_mask(image, threshold):
 # Task 3 (2 marks)
 def mask_togreyscale(image, mask):
      """Return a copy of the input colour image such that all pixels whose mask value is 1
-     are converted as greyscale values. To convert a pixel to the greyscale values, change 
+     are converted to greyscale values. To convert a pixel to the greyscale values, change 
      each channel value to the mean value of the channels in the pixel.
      >>> image = np.array([[[250,   2,   2], [  0, 255,   2], [  0,   0, 255]], \
                            [[  2,   2,   2], [250, 255, 255], [127, 127, 127]]])
@@ -88,7 +88,7 @@ def build_simple_nn(rows, columns, hidden_size, output_size, output_activation):
 # Task 5
 def build_deep_nn(rows, columns, num_hidden, hidden_sizes, dropout_rates,
                   output_size, output_activation):
-     """Return a Keras neural model that has the followink layers:
+     """Return a Keras neural model that has the following layers:
      - a Flatten layer with input shape (rows, columns, 3)
      - as many hidden layers as specified by num_hidden
        - hidden layer number i is of size hidden_sizes[i] and activation 'relu'
